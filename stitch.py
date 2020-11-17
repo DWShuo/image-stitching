@@ -20,7 +20,7 @@ def match(img1, img2, img_out):
        Homography & Fundamental Estimation
        return error, or fund & homo matrix
        parts of code taken from openCV tut
-       https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d py_feature_homography/py_feature_homography.html
+       https://docs.opencv.org/3.4/d5/d6f/tutorial_feature_flann_matcher.html
     """
     sift = cv2.xfeatures2d.SIFT_create()
     kpt1, des1 = sift.detectAndCompute(img1,None)
@@ -139,7 +139,7 @@ def stitchImages(img1, img2, H, img_out):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python hw4_align.py <img_dir>")
+        print("Usage: python stitch.py <img_dir>")
     #set working dir, and get list of images from cli argument
     wrk_dir = os.getcwd()
     img_dir = sys.argv[1]
